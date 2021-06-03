@@ -1,0 +1,304 @@
+<!Doctype html>
+<html>
+<head>
+<title>HOMEPAGE</title>
+</head>
+<body background="image/body.jpg">
+<style>
+/* Style the body */
+body {
+  font-family:georgia;
+  margin: 0;
+}
+
+/* Page Content */
+.content {padding:10px;}
+</style>
+</head>
+<body>
+<br>
+<div class="header">
+<center><header><image src= "image/header2.png" width="60%" height="20%"></header></center>
+<br>
+<center>&#127803;<a href="aboutme.html"><img src= "image/aboutme.png"></a>&#127803;
+</div>
+<br>
+<center>&#127804<a href="index.html"><img src= "image/home.png"></a></a>
+<a href="profile.html"><img src= "image/profile.png"></a>
+<a href="education.html"><img src= "image/education.png"></a>
+<a href="research.html"><img src= "image/search.png"></a>
+<a href="skill.html"><img src= "image/skill.png">&#127804</a>
+</center>
+<style>* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: georgia
+  margin: 0;
+
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 25px;
+}
+
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #FFDFDD;
+  padding: 30px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color:image/background1.jpg;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #FBBBB9;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background:#FFEBCD;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<br>
+<div class="row">
+  <div class="side">
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt"></div>
+
+    <center><h3><i><u>CONTACT INFO &#128071;</i></u></h3></center>
+<br>
+<center><div class="fakeimg" style="height:100px;">&#9993;<p>hanisdiyana@uitm.edu.my</p></div>
+<br>
+<br>
+<center><div class="fakeimg" style="height:100px;">&#128222;<p>603-79622178</p></div>
+<br>
+<br>
+<center><div class="fakeimg" style="height 80px;"><p>FACEBOOK &#10145; @Hanis Diyana</p></div><br>
+<br>
+<br>
+<center><h3><i><u>FEEDBACK FORM &#128071;</i></u></h3></center>
+<body>
+    <div class="form-container">
+        <form name="frmContact" id="" frmContact"" method="post"
+           <form action="/action_page.php" target="_parent">
+            <onsubmit="return validateContactForm()">
+
+            <div class="input-row">
+                <label style="padding-top: 20px;">Name</label> <span
+                    id="userName-info" class="info"></span><br /> <input
+                    type="text" class="input-field" name="userName"
+                    id="userName" />
+            </div>
+            <div class="input-row">
+                <label>Email</label> <span id="userEmail-info"
+                    class="info"></span><br /> <input type="text"
+                    class="input-field" name="userEmail" id="userEmail" />
+            </div>
+            <div class="input-row">
+                <label>Subject</label> <span id="subject-info"
+                    class="info"></span><br /> <input type="text"
+                    class="input-field" name="subject" id="subject" />
+            </div>
+            <div class="input-row">
+                <label>Message</label> <span id="userMessage-info"
+                    class="info"></span><br />
+                <textarea name="content" id="content"
+                    class="input-field" cols="40" rows="6"></textarea>
+            </div>
+            <div>
+                <input type="submit" name="send" class="btn-submit"
+                    value="Send" />
+
+                <div id="statusMessage"> 
+                        <?php
+                        if (! empty($message)) {
+                            ?>
+                            <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
+                        <?php
+                        }
+                        ?>
+                    </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        function validateContactForm() {
+            var valid = true;
+
+            $(".info").html("");
+            $(".input-field").css('border', '#e0dfdf 1px solid');
+            var userName = $("#userName").val();
+            var userEmail = $("#userEmail").val();
+            var subject = $("#subject").val();
+            var content = $("#content").val();
+            
+            if (userName == "") {
+                $("#userName-info").html("Required.");
+                $("#userName").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (userEmail == "") {
+                $("#userEmail-info").html("Required.");
+                $("#userEmail").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+            {
+                $("#userEmail-info").html("Invalid Email Address.");
+                $("#userEmail").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            if (subject == "") {
+                $("#subject-info").html("Required.");
+                $("#subject").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (content == "") {
+                $("#userMessage-info").html("Required.");
+                $("#content").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            return valid;
+        }
+</script>
+<br>
+<br>
+<h3><u><i>UITM PUNCAK PERDANA &#128071;</i></u></h3>
+<video width=300" height="300" controls>
+ 	<source src="video/puncakperdana.mp4" type="video/mp4">
+ 	<source src="movie.ogg" type="video/ogg">
+ 	Your browser does not support the video tag.
+ 	</video>
+  </div>  
+ <div class="main">
+    <h2><center>&#129493;&#127995 SENIOR LECTURER &#129493;&#127995</h2></center>
+    <center><h5>DR HANIS DIYANA KAMARUDIN  (PhD)</h5> </center>
+    <center><image src="image/lect.jpg" alt="Dr. Hanis Diyana" width="30%" height="10%"></center>
+    
+<div class="fakeimg" style="height:150px;">
+Hanis Diyana Kamarudin teaches oral history as part of the Records Management Programme at the Universiti Teknologi MARA, Malaysia. 
+She served as Deputy Secretary of the Malaysian Oral History Association from 2013 until 2015. 
+She is delighted to be part of the Malaysian Oral History Association which brings academic researchers and industry partners together to record, share and archive oral history. 
+She is currently a doctoral student in Information Technology at the Monash University, Australia</div>
+    
+<br>
+<h2><center><u>&#128522; WORKING EXPEREINCES &#128522;</u></center></h2>
+<tr align="center">
+</tr>
+<table border="1" width="60%" align="center" valign="middle" cellpadding="8" cellspacing="6">
+<tr align="center">
+</tr>
+<tr align="center" bgcolor="#50EBEC">
+<th>NO</th>
+<th>POSITION</th>
+<th>PLACE</th>
+<th>YEAR</th>
+</tr>
+<tr align="center"  bgcolor="#FFA62F">
+<td>1</td>
+<td>Senior Lecturer</td>
+<td>Universiti Teknologi MARA, Malaysia</td>
+<td>Sep 2017 - Now 3 years 9 month </td>
+</tr>
+<tr align="center" bgcolor="#FFF380">
+<td>2</td>
+<td> Lecturer </td>
+<td>Universiti Teknologi MARA, Malaysia</td>
+<td>Sep 2009 - Ogos 2017 (8 years) </td>
+</tr>
+<tr align="center" bgcolor="#CCFB5D">
+<td>3</td>
+<td>IT Executive</td>
+<td> Boustead Heavy Industries Corporation Berhad </td>
+<td>2007 - 2009  (2 years ) </td>
+</tr>
+<tr>
+</td>
+</tr>
+</table>
+<br>
+<br>
+<center>
+ 	<audio controls="controls">
+ 	 
+ 	<source src="music/backgroundsound.mp3" type="audio/mp3">
+ 	 
+ 	</audio></center>
+  </div>
+</div>
+<div class="footer">
+ <p>Copyright &#169; aisyah_shaheri 2021;</p>
+  <p>nuraisyah.shaheri@gmail.com</p>
+<p>Recommended browser - Google Chrome</p>
+<p>03-06-2021</p>
+</div>
+
+</body>
+</html>
